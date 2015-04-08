@@ -1,0 +1,26 @@
+{
+  "name": "seraph-client",
+  "version": "0.0.0",
+  "description": "test de seraph",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "express": "^4.12.3",
+    "joi": "^6.1.0",
+    "seraph": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexrtou/seraph-client.git"
+  },
+  "author": "Alexandre ROC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexrtou/seraph-client/issues"
+  },
+  "homepage": "https://github.com/alexrtou/seraph-client"
+}
