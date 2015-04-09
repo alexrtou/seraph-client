@@ -8,7 +8,8 @@
     "express": "^4.12.3",
     "joi": "^6.1.0",
     "lodash": "^3.6.0",
-    "seraph": "^0.10.0"
+    "seraph": "^0.10.0",
+    "seraph-model": "~0.7.0"
   },
   "devDependencies": {},
   "scripts": {
