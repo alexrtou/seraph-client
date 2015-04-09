@@ -19,6 +19,8 @@ Récupérer les sources :
 
     git clone https://github.com/alexrtou/seraph-client.git
     cd seraph-client
+	npm install
+
 
 Définir les modèles dans `./models` ici `User.js` et `Group.js`
 
