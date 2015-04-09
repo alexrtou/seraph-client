@@ -5,6 +5,7 @@ module.exports = function(db, Joi){
   var User = model(db, 'user');
 
   User.validator = Joi.object().keys({
+    id: Joi.number().integer().optional(),
     nom: Joi.string().alphanum().min(3).max(30).required(),
     prenom: Joi.string().alphanum().min(3).max(30).required(),
     login: Joi.string().alphanum().min(3).max(30).required(),
