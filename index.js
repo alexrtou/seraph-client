@@ -19,7 +19,7 @@ var schema = Joi.object().keys({
 var User = model(db, 'user');
 Promise.promisifyAll(User);
 
-var moi = { nom: 'ROC',  prenom: 'Alexandre', email:'alex_roc@yahoo.fr', login:'alex'};
+var moi = { nom: 'ROC',  prenom: 'Alexandre', email:'ar@yahoo.fr', login:'alex'};
 
 Joi
   .validateAsync(moi, schema)
