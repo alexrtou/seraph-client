@@ -1,3 +1,5 @@
+'use strict';
+
 var models = require('./models');
 
 var moi = { nom: 'ROC',  prenom: 'Alexandre', email:'ar@yahoo.fr', login:'alex'};

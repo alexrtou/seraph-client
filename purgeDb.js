@@ -1,3 +1,5 @@
+'use strict';
+
 var models = require('./models');
 
 models.db.queryRawAsync('MATCH (n)-[r]-(m) DELETE n, r, m')
@@ -15,7 +17,7 @@ models.db.queryRawAsync('MATCH (n)-[r]-(m) DELETE n, r, m')
 
   .then(
   function() {
-    return models.db.queryRawAsync('MATCH n DELETE n')
+    return models.db.queryRawAsync('MATCH n DELETE n');
   })
 
   .then(

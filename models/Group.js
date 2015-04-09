@@ -1,3 +1,5 @@
+'use strict';
+
 var model = require('seraph-model');
 
 module.exports = function(db, Joi, User){
