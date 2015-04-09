@@ -37,12 +37,22 @@ models.User.validate(moi)
   .then(
   function(saved) {
     console.log('Utilisateur modifié : ', saved);
+    return saved.id;
   })
 
   .catch(
   Error,
   function(e) {
-    console.error("Erreur survenue : ", e.message);
+    console.error("Erreur survenue à l\'update: ", e.message);
   })
 
-;
+  .then(
+  function(id){
+    models.db.deleteAsync(id);
+  })
+
+  .catch(
+  Error,
+  function(e) {
+    console.error("Erreur survenue à la suppression: ", e.message);
+  });
