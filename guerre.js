@@ -1,6 +1,8 @@
 'use strict';
 
 var models = require('./models');
+var fs = require('fs');
+
 
 // Json des datas dont les relations filles
 var armee1 = {
@@ -38,12 +40,14 @@ models.Armee.validate(armee1)
 // Recherche tous les groupes et Users fils
   .then(
   function() {
-    return models.Armee.findAllAsync();
+    return models.db.queryRawAsync('MATCH (a)-[r:contient]->(n) RETURN DISTINCT a, n');
   })
 
   .then(function(armees){
+  
+  fs.writeFile('graphDarmees.json', JSON.stringify(armees,null,2));
   console.log('------------------------------------------------------');
-  console.log(JSON.stringify(armees,null,2));
+  console.log('écrit dans graphDarmees.json');
   console.log('------------------------------------------------------');
 })
 
