@@ -3,19 +3,32 @@
 var conf = require('../conf'),
     _ = require('lodash'),
     db = require('seraph')(conf.url),
-    promise = require("bluebird"),
+    Promise = require("bluebird"),
     Joi = require('joi');
 
-promise.promisifyAll(Joi);
-promise.promisifyAll(db);
+Promise.promisifyAll(Joi);
+Promise.promisifyAll(db);
 
 // Définition des modèles
 var User = require('./User')(db, Joi),
     Group = require('./Group')(db, Joi, User),
+    Brigade = require('./Brigade')(db, Joi),
+    Bataillon = require('./Bataillon')(db, Joi),
+    Regiment = require('./Regiment')(db, Joi),
+    Division = require('./Division')(db, Joi, Brigade, Bataillon, Regiment),
+    CorpArmee = require('./CorpArmee')(db, Joi, Division),
+    Armee = require('./Armee')(db, Joi, CorpArmee),
+    
     exportable = {
       db:db,
       User:User,
-      Group:Group
+      Group:Group,
+      Brigade:Brigade,
+      Bataillon:Bataillon,
+      Regiment:Regiment,
+      Division:Division,
+      CorpArmee:CorpArmee,
+      Armee:Armee
     };
 
 // Ajoute le validator
