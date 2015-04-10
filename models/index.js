@@ -3,11 +3,11 @@
 var conf = require('../conf'),
     _ = require('lodash'),
     db = require('seraph')(conf.url),
-    Promise = require("bluebird"),
+    promise = require("bluebird"),
     Joi = require('joi');
 
-Promise.promisifyAll(Joi);
-Promise.promisifyAll(db);
+promise.promisifyAll(Joi);
+promise.promisifyAll(db);
 
 // Définition des modèles
 var User = require('./User')(db, Joi),
